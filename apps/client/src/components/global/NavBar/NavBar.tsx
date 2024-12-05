@@ -2,21 +2,25 @@ import { Link } from '@tanstack/react-router'
 import { SlMagnifier } from 'react-icons/sl'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { useSearch } from '../../../hooks/useSearch'
-import { useState } from 'react'
+import { useRef } from 'react'
 
 const NavBar = () => {
   const { setSearch } = useSearch()
-  const [inputValue, setInputValue] = useState<string>('')
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSearch = () => {
-    const currentPath = window.location.pathname
-    setSearch(currentPath, inputValue)
-    setInputValue('')
+    if (inputRef.current) {
+      const currentPath = window.location.pathname
+      setSearch(currentPath, inputRef.current.value)
+      inputRef.current.value = ''
+    }
   }
 
   const handleResetSearch = () => {
     const currentPath = window.location.pathname
-    setInputValue('')
+    if (inputRef.current) {
+      inputRef.current.value = ''
+    }
     setSearch(currentPath, '')
   }
 
@@ -40,8 +44,7 @@ const NavBar = () => {
           <div className="flex flex-row justify-around w-full">
             <input
               type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              ref={inputRef}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               placeholder="Search for products..."
               className="bg-transparent text-sm focus:outline-none text-white placeholder-gray-500"

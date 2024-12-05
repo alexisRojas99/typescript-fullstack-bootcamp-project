@@ -9,7 +9,7 @@ interface CreateProductRequest extends Request {
 }
 
 export const findProduct = async (req: Request) => {
-  const { name } = req.query
+  const { name, collectionName } = req.query
 
   const where = {}
 
@@ -18,6 +18,19 @@ export const findProduct = async (req: Request) => {
       name: {
         contains: name,
         mode: 'insensitive',
+      },
+    })
+  }
+
+  if (collectionName) {
+    Object.assign(where, {
+      collections: {
+        some: {
+          name: {
+            contains: collectionName,
+            mode: 'insensitive',
+          },
+        },
       },
     })
   }

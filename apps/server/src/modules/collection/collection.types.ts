@@ -5,16 +5,15 @@ export interface Product {
   image?: string
   variant: Variant[]
   option: Option[]
-  collections: Collection[]
+  collections: ICollection[]
   createdAt: Date
   updatedAt: Date
 }
 
-export interface Collection {
+export interface ICollection {
   id: number
   name: string
-  description?: string
-  products: Product[]
+  description?: string | null
   createdAt: Date
   updatedAt: Date
 }
