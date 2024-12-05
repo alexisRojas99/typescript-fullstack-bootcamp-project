@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react'
-import NavBar from './../components/global/NavBar'
+import NavBar from '../components/global/NavBar/NavBar'
 
 interface LayoutProps {
   children: ReactNode

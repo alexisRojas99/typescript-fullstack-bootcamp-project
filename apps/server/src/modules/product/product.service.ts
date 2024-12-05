@@ -1,11 +1,11 @@
 import { Request } from 'express'
 import { PrismaClient } from '@repo/db'
-import { Product } from './product.types'
+import { IProduct } from './product.types'
 
 const client = new PrismaClient()
 
 interface CreateProductRequest extends Request {
-  body: Product
+  body: IProduct
 }
 
 export const findProduct = async (req: Request) => {
