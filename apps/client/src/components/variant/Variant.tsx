@@ -23,7 +23,7 @@ const Variant = () => {
         const params = {}
 
         if (searchTerm) {
-          if (path.includes('/') || path.includes('/variants')) {
+          if (path.includes('/products/')) {
             Object.assign(params, {
               name: searchTerm,
             })
