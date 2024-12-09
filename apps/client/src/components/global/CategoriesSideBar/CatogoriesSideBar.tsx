@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 interface CategoriesSidebarProps {
+  name: string
   categories: string[]
   selectedCategory: string
   onCategoryChange: (category: string) => void
@@ -10,11 +11,12 @@ const CatogiresSideBar: FC<CategoriesSidebarProps> = ({
   categories,
   selectedCategory,
   onCategoryChange,
+  name,
 }) => {
   return (
     <aside className="w-full text-white mr-4">
       <h2 className="text-xs font-bold mb-4 text-[var(--color-primary)]">
-        Collections
+        {name}
       </h2>
       <ul className="space-y-2">
         {categories.map((category) => (

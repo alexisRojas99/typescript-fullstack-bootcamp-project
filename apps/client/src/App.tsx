@@ -67,6 +67,7 @@ function App() {
     <main className="container mx-auto min-h-screen pt-8 mt-16">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <CategoriesSideBar
+          name="Collections"
           categories={categories}
           selectedCategory={selectedCategory}
           onCategoryChange={(category) => setSelectedCategory(category)}
