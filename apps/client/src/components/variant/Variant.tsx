@@ -3,7 +3,7 @@ import { useParams } from '@tanstack/react-router'
 import { IVariant } from './variant.types'
 import { getVariantsByProductId } from '../../services/fetchVariants'
 import { useSearch } from '../../hooks/useSearch'
-import CategoriesSideBar from './../global/CategoriesSideBar/CatogoriesSideBar'
+import CategoriesSideBar from '../global/CategoriesSideBar/CategoriesSideBar'
 
 const Variant = () => {
   const [variants, setVariants] = useState<IVariant[]>([])

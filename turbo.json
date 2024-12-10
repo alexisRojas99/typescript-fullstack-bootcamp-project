@@ -44,6 +44,7 @@
     },
     "db:seed": {
       "cache": false
-    }
+    },
+    "test": {}
   }
 }

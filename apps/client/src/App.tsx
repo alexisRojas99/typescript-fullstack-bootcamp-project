@@ -6,7 +6,7 @@ import { IProduct } from './components/product/product.types'
 import { getProducts } from './services/fetchProducts'
 import { useSearch } from './hooks/useSearch'
 import { getCollections } from './services/fetchCollections'
-import CategoriesSideBar from './components/global/CategoriesSideBar/CatogoriesSideBar'
+import CategoriesSideBar from './components/global/CategoriesSideBar/CategoriesSideBar'
 
 function App() {
   const { path, searchTerm } = useSearch()
